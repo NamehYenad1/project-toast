@@ -14,8 +14,11 @@ const ToastProvider = ({children}) => {
             return prevToasts.filter((toast) => toast.toastId !== id);
         });
     };
+    const dismissAllToasts = () => {
+        setToasts([]);
+    }
     return (
-        <ToastContext.Provider value={{toasts, addToast, removeToast}}>
+        <ToastContext.Provider value={{toasts, addToast, removeToast,dismissAllToasts}}>
             {children}
         </ToastContext.Provider>
     );
